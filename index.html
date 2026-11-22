@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SMART BAZAR | Smart Shopping, Smart Living</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+header{background:#0d6b50;color:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:800}header small{display:block;font-size:12px;font-weight:400}
+.search{padding:11px;border:0;border-radius:8px;min-width:190px}
+.hero{margin:22px auto;max-width:1100px;padding:34px 6%;border-radius:16px;background:linear-gradient(120deg,#0d6b50,#20a879);color:white}
+.hero h1{font-size:32px;margin:0 0 10px}.hero p{margin:0}
+main{max-width:1100px;margin:auto;padding:0 16px 35px}
+h2{font-size:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px}
+.card{background:white;border-radius:12px;padding:16px;box-shadow:0 2px 12px #12203312}
+.pic{height:95px;border-radius:9px;background:#e8f4ef;display:grid;place-items:center;font-size:42px}
+.card h3{font-size:16px;margin:12px 0 6px}.price{font-weight:bold;color:#0d6b50}
+button{background:#0d6b50;color:white;border:0;padding:10px 13px;border-radius:8px;margin-top:9px}
+footer{text-align:center;padding:22px;background:#e8eee9;font-size:13px}
+.notice{font-size:13px;color:#5b6472;margin-top:18px}
+</style>
+</head>
+<body>
+<header><div class="logo">SMART BAZAR<small>Smart Shopping, Smart Living.</small></div><input class="search" placeholder="পণ্য খুঁজুন..." oninput="filterProducts(this.value)"><div>🛒 কার্ট: <span id="count">0</span></div></header>
+<section class="hero"><h1>স্বাগতম SMART BAZAR-এ</h1><p>আপনার পছন্দের পণ্য, সহজ অনলাইন কেনাকাটা।</p></section>
+<main><h2>জনপ্রিয় পণ্য</h2><div class="grid" id="products">
+<div class="card"><div class="pic">🎧</div><h3>ওয়্যারলেস ইয়ারবাড</h3><div class="price">৳ ৫৫০</div><button onclick="addCart()">কার্টে যোগ করুন</button></div>
+<div class="card"><div class="pic">⌚</div><h3>স্মার্ট ওয়াচ</h3><div class="price">৳ ৮৫০</div><button onclick="addCart()">কার্টে যোগ করুন</button></div>
+<div class="card"><div class="pic">🎒</div><h3>স্কুল ব্যাগ</h3><div class="price">৳ ৬৫০</div><button onclick="addCart()">কার্টে যোগ করুন</button></div>
+<div class="card"><div class="pic">💡</div><h3>LED লাইট</h3><div class="price">৳ ২৫০</div><button onclick="addCart()">কার্টে যোগ করুন</button></div>
+</div><p class="notice">এটি একটি প্রাথমিক ডেমো ওয়েবসাইট। পণ্যের নাম, দাম ও অর্ডার ব্যবস্থা চালুর আগে যাচাই ও সংযোগ করতে হবে।</p></main>
+<footer>© SMART BAZAR · Smart Shopping, Smart Living.</footer>
+<script>
+let count=0;function addCart(){count++;document.getElementById('count').textContent=count}
+function filterProducts(q){document.querySelectorAll('.card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q.toLowerCase())?'block':'none')}
+</script>
+</body></html>
